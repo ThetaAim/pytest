@@ -1,8 +1,14 @@
+properties([pipelineTriggers([pollSCM('* * * * *')])])
 pipeline {
     agent any
+
     stages {
-        stage('Build') {
+        stage('Execute Python Script') {
             steps {
-                sh "python3 ./1.py"
+                // Run Python script using sh step
+                sh 'python3 1.py'
             }
         }
+    }
+}
+
